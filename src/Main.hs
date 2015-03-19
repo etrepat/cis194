@@ -4,6 +4,5 @@ import Hw.Week1.CardsTest
 
 main :: IO()
 main = do
-  putHeading "CIS 194: Introduction to Haskell (Spring 2013)"
-  putStrLn ""
+  putHeadingLn "CIS 194: Introduction to Haskell (Spring 2013)"
   cardsTest

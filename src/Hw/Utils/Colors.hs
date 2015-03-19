@@ -17,5 +17,8 @@ ansiBlue    = "\x1b[1;34m"
 ansiYellow :: String
 ansiYellow  = "\x1b[1;33m"
 
+ansiMagenta :: String
+ansiMagenta  = "\x1b[1;35m"
+
 wrapANSI :: String -> String -> String
 wrapANSI esc str = esc ++ str ++ ansiClear

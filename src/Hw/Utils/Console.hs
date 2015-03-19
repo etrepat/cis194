@@ -11,10 +11,16 @@ putHeadingLn :: String -> IO()
 putHeadingLn s = putStrLn $ wrapBlue s
 
 putTitle :: String -> IO()
-putTitle s = putStr $ wrapYellow s
+putTitle s = putStr $ wrapMagenta s
 
 putTitleLn :: String -> IO()
-putTitleLn s = putStrLn $ wrapYellow s
+putTitleLn s = putStrLn $ wrapMagenta s
+
+putSubtitle :: String -> IO()
+putSubtitle s = putStr $ wrapYellow s
+
+putSubtitleLn :: String -> IO()
+putSubtitleLn s = putStrLn $ wrapYellow s
 
 putSuccess :: String -> IO()
 putSuccess s = putStr $ wrapGreen s
@@ -39,3 +45,7 @@ wrapBlue = wrapANSI ansiBlue
 
 wrapYellow :: String -> String
 wrapYellow = wrapANSI ansiYellow
+
+wrapMagenta :: String -> String
+wrapMagenta = wrapANSI ansiMagenta
+

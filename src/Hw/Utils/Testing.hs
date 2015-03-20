@@ -13,3 +13,9 @@ assertEqual message expected value = do
   putStrLn $ "      " ++ " " ++ message ++ " " ++ (boolToStr result)
       where boolToStr True  = "\r[ " ++ wrapGreen "OK" ++ " ]"
             boolToStr False = "\r[" ++ wrapRed "FAIL" ++ "\x1b[0m" ++ "]"
+
+assertTrue :: String -> Bool -> IO()
+assertTrue message value = assertEqual message True value
+
+assertFalse :: String -> Bool -> IO()
+assertFalse message value = assertEqual message False value

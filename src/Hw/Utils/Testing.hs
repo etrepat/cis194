@@ -7,12 +7,19 @@ import Hw.Utils.Console
 assert :: Eq a => a -> a -> Bool
 assert expected value = expected == value
 
-assertEqual :: Eq a => String -> a -> a -> IO()
+assertEqual :: (Eq a, Show a) => String -> a -> a -> IO()
 assertEqual message expected value = do
-  let result = assert expected value
+  let
+    boolToStr bv = "\r[" ++ (if bv then wrapGreen " OK " else wrapRed "FAIL") ++ "]"
+    result = assert expected value
+
   putStrLn $ "      " ++ " " ++ message ++ " " ++ (boolToStr result)
-      where boolToStr True  = "\r[ " ++ wrapGreen "OK" ++ " ]"
-            boolToStr False = "\r[" ++ wrapRed "FAIL" ++ "\x1b[0m" ++ "]"
+
+  if not result
+    then do
+      putStrLn $ "Expected --> " ++ (wrapYellow (show expected))
+      putStrLn $ "     Got --> " ++ (wrapRed (show value))
+    else return ()
 
 assertTrue :: String -> Bool -> IO()
 assertTrue message value = assertEqual message True value

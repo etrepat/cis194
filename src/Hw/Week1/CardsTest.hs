@@ -10,7 +10,7 @@ cardsTest :: IO()
 cardsTest = do
   putTitleLn "Homework 1 : Exercises 1 - 4 (Credit card validation)"
   putSubtitleLn "Exercise 1"
-  assertEqual "toDigits 1234sumD == [1,2,3,4]" [1,2,3,4] (toDigits 1234)
+  assertEqual "toDigits 1234 == [1,2,3,4]" [1,2,3,4] (toDigits 1234)
   assertEqual "toDigitsRev 1234 == [4,3,2,1]" [4,3,2,1] (toDigitsRev 1234)
   assertEqual "toDigits 0 == []" [] (toDigits 0)
   assertEqual "toDigits (-17) == []" [] (toDigits (-17))

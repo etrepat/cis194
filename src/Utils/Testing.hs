@@ -1,8 +1,8 @@
 -- Testing.hs
 -- Simplest assertion functions ever ;)
-module Hw.Utils.Testing where
+module Utils.Testing (assertEqual, assertTrue, assertFalse) where
 
-import Hw.Utils.Console
+import Utils.Console
 
 assert :: Eq a => a -> a -> Bool
 assert expected value = expected == value

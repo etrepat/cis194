@@ -1,8 +1,8 @@
 -- Console.hs
 -- Minor printing functions
-module Hw.Utils.Console where
+module Utils.Console where
 
-import Hw.Utils.Colors
+import Utils.Colors
 
 putHeading :: String -> IO()
 putHeading s = putStr $ wrapBlue s
@@ -48,4 +48,3 @@ wrapYellow = wrapANSI ansiYellow
 
 wrapMagenta :: String -> String
 wrapMagenta = wrapANSI ansiMagenta
-

@@ -1,6 +1,6 @@
 -- Colors.hs
 -- Some color funcs
-module Hw.Utils.Colors where
+module Utils.Colors where
 
 ansiClear :: String
 ansiClear   = "\x1b[0m"
